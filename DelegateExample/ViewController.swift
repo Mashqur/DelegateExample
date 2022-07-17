@@ -19,19 +19,19 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: ThisIsMyclassDelegate {
+extension ViewController: NameShowDelegate {
     func didShowManyName() {
         print("Alex")
     }
 }
 
-protocol ThisIsMyclassDelegate: AnyObject {
+protocol NameShowDelegate: AnyObject {
     func didShowManyName()
 }
 
 class NameShow {
     
-    weak var delegate: ThisIsMyclassDelegate!
+    weak var delegate: NameShowDelegate!
     
     func showMyName() {
         delegate.didShowManyName()
